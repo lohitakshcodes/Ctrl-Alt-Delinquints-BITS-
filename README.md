@@ -1,24 +1,24 @@
 # Ctrl-Alt-Delinquints-BITS-
-styles.css: provides uniform styling to all webpages 
+Frontend Templates & Styles:
+index.html: The main landing page of the web application, welcoming users to the platform.
 
+login.html: A secure login page where users can authenticate into their accounts.
 
-dashboard.html: the template for the patient/doctor/ caregiver dashboard 
+register.html: The registration page for new users to sign up for the platform.
 
-index.html: the template for the main front page of our web application
+dashboard.html: The primary dashboard page that acts as the homepage for patients, doctors, and caregivers.
 
-login.html: the template for the login page 
+patients.html: A dedicated page for patients to manage their health information and access medical services.
 
-register.html: the template for the registration page
+upload.html: A page allowing patients to upload medical documents securely for their healthcare providers to review.
 
-patients.html: the template for the main page for patients 
+styles.css: The core stylesheet that provides uniform and responsive design across all pages.
 
-upload.html: the template for the page where patients can upload medical documents
+JavaScript Files:
+main.js: Contains the general website functionality, including interactions and user experience enhancements.
 
+auth.js: Handles the user authentication process, managing login, registration, logout, token handling, and access control.
 
-main.js: used to define the main functionalities of our website
+dashboard.js: Manages the core functionalities specific to the dashboards of patients, doctors, and caregivers, ensuring they have access to the relevant features based on their roles.
 
-auth.js: it handles user authentication, including login, logout, token management, and access control.
-
-dashboard.js: used to define the prominent functionalities of our dashboard for patient, doctors and caregivers 
-
-upload.js: used to define the functionalities of the upload page
+upload.js: Handles the interactions and processes related to the medical document upload page, enabling a smooth file upload experience for patients.
