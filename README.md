@@ -1,5 +1,4 @@
 # Ctrl-Alt-Delinquints-BITS-
-Web application which connects patients to the doctor and allows them to save their reports and other medical info.
 styles.css: provides uniform styling to all webpages 
 
 dashboard.html: the template for the patient/doctor/ caregiver dashboard 
