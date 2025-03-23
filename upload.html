@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Documents - PatientConnect</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="dashboard.html" class="logo-link">
+          <div class="logo-icon">
+            <i class="fas fa-file-medical"></i>
+          </div>
+          <span class="logo-text">PatientConnect</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="theme-toggle">
+          <button id="themeToggle" class="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <div class="user-menu">
+          <span class="user-name" id="userName">Dr. Sarah Johnson</span>
+          <button id="logoutBtn" class="btn-icon logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="sidebar-user-info">
+          <h3 class="sidebar-user-name" id="sidebarUserName">Dr. Sarah Johnson</h3>
+          <p class="sidebar-user-role" id="sidebarUserRole">Healthcare Provider</p>
+        </div>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="patients.html" class="sidebar-link">
+          <i class="fas fa-users"></i>
+          <span>Patient Records</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-file-alt"></i>
+          <span>Documents</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-search"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-prescription"></i>
+          <span>Prescriptions</span>
+        </a>
+        <a href="upload.html" class="sidebar-link active">
+          <i class="fas fa-file-upload"></i>
+          <span>Upload</span>
+        </a>
+      </nav>
+    </aside>
+    
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Upload Documents</h1>
+        <p class="subtitle">Upload patient medical records, reports, and other documents</p>
+        <a href="patients.html" class="btn btn-outline">
+          <i class="fas fa-users"></i>
+          View Patients
+        </a>
+      </div>
+      
+      <form id="uploadForm" class="upload-form">
+        <div class="data-card">
+          <div class="data-card-header">
+            <h2>Document Information</h2>
+            <p>Select the patient and enter details about the document</p>
+          </div>
+          
+          <div class="data-card-content">
+            <div class="form-group">
+              <label for="patient">Patient</label>
+              <select id="patient" class="select-input" required>
+                <option value="">Select a patient</option>
+                <option value="1">Alex Johnson</option>
+                <option value="2">Emma Wilson</option>
+                <option value="3">Michael Brown</option>
+                <option value="4">Sarah Davis</option>
+                <option value="5">James Wilson</option>
+              </select>
+            </div>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="documentType">Document Type</label>
+                <select id="documentType" class="select-input" required>
+                  <option value="">Select document type</option>
+                  <option value="Lab Results">Lab Results</option>
+                  <option value="Imaging Report">Imaging Report</option>
+                  <option value="Consultation Note">Consultation Note</option>
+                  <option value="Hospital Discharge">Hospital Discharge</option>
+                  <option value="Prescription">Prescription</option>
+                  <option value="Insurance Document">Insurance Document</option>
+                  <option value="Other Medical Record">Other Medical Record</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="date">Document Date</label>
+                <input type="date" id="date" class="input">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" rows="3" class="textarea" placeholder="Add additional information about this document..."></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div class="data-card mt-6">
+          <div class="data-card-header">
+            <h2>Upload Files</h2>
+            <p>Drag and drop files or select them from your device</p>
+          </div>
+          
+          <div class="data-card-content">
+            <div id="dropZone" class="drop-zone">
+              <div class="drop-zone-content">
+                <i class="fas fa-file-upload drop-icon"></i>
+                <h3>Drag and drop your files</h3>
+                <p>Files must be in PDF, JPG, PNG, or DOCX format</p>
+                <button type="button" id="selectFilesBtn" class="btn btn-outline">Select Files</button>
+                <input type="file" id="fileInput" multiple accept=".pdf,.jpg,.jpeg,.png,.docx" class="hidden">
+              </div>
+            </div>
+            
+            <div id="fileList" class="file-list hidden">
+              <div class="file-list-header">
+                <h4>Selected Files</h4>
+                <p id="fileCount">0 files</p>
+              </div>
+              <div id="fileItems" class="file-items">
+                <!-- File items will be added here dynamically -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="data-card-footer">
+            <button type="button" id="cancelBtn" class="btn btn-outline">Cancel</button>
+            <button type="submit" id="uploadBtn" class="btn btn-primary">
+              <i class="fas fa-file-upload"></i>
+              Upload Files
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - PatientVault</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="theme-toggle absolute">
+      <button id="themeToggle" class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+
+    <div class="auth-logo">
+      <div class="logo-icon">
+        <i class="fas fa-file-medical"></i>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1 id="registerTitle">Create an account</h1>
+        <p>Enter your information to create your account</p>
+      </div>
+      
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" placeholder="name@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" placeholder="••••••••" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="••••••••" required>
+        </div>
+        
+        <div class="form-group">
+          <label>Account Type</label>
+          <div class="radio-group">
+            <div class="radio-item">
+              <input type="radio" id="patientRole" name="role" value="patient" checked>
+              <label for="patientRole">Patient</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" id="doctorRole" name="role" value="doctor">
+              <label for="doctorRole">Doctor</label>
+            </div>
+            <div class="radio-item">
+              <input type="radio" id="caregiverRole" name="role" value="caregiver">
+              <label for="caregiverRole">Caregiver</label>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit" id="registerButton" class="btn btn-primary btn-full">Create account</button>
+      </form>
+      
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html" id="loginLink">Sign in</a></p>
+        <p><a href="index.html" class="back-link">Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

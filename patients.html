@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patients - PatientVault</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="dashboard.html" class="logo-link">
+          <div class="logo-icon">
+            <i class="fas fa-file-medical"></i>
+          </div>
+          <span class="logo-text">PatientVault</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="theme-toggle">
+          <button id="themeToggle" class="theme-toggle-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <div class="user-menu">
+          <span class="user-name" id="userName">Dr. Sarah Johnson</span>
+          <button id="logoutBtn" class="btn-icon logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="dashboard-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-user">
+        <div class="sidebar-user-icon">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="sidebar-user-info">
+          <h3 class="sidebar-user-name" id="sidebarUserName">Dr. Sarah Johnson</h3>
+          <p class="sidebar-user-role" id="sidebarUserRole">Healthcare Provider</p>
+        </div>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="patients.html" class="sidebar-link active">
+          <i class="fas fa-users"></i>
+          <span>Patient Records</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-file-alt"></i>
+          <span>Documents</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-search"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <i class="fas fa-prescription"></i>
+          <span>Prescriptions</span>
+        </a>
+        <a href="upload.html" class="sidebar-link">
+          <i class="fas fa-file-upload"></i>
+          <span>Upload</span>
+        </a>
+      </nav>
+    </aside>
+    
+    <main class="dashboard-main">
+      <div class="dashboard-header">
+        <h1>Patient Records</h1>
+        <p class="subtitle">View and manage your patient records</p>
+        <a href="new-patient.html" class="btn btn-primary">
+          <i class="fas fa-user-plus"></i>
+          Add New Patient
+        </a>
+      </div>
+      
+      <div class="data-card">
+        <div class="data-card-header">
+          <div>
+            <h2>All Patients</h2>
+            <p>A list of all patients under your care</p>
+          </div>
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="patientSearch" placeholder="Search patients..." class="search-input">
+          </div>
+        </div>
+        
+        <div class="data-card-content">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th class="hide-mobile">Age</th>
+                  <th class="hide-mobile">Gender</th>
+                  <th class="hide-tablet">Contact</th>
+                  <th class="hide-tablet">Last Visit</th>
+                  <th>Documents</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="patientTableBody">
+                <tr>
+                  <td>Alex Johnson</td>
+                  <td class="hide-mobile">45</td>
+                  <td class="hide-mobile">Male</td>
+                  <td class="hide-tablet">
+                    <div class="contact-info">
+                      <p>555-123-4567</p>
+                      <p class="email">alex@example.com</p>
+                    </div>
+                  </td>
+                  <td class="hide-tablet">Oct 15, 2023</td>
+                  <td><span class="badge">8</span></td>
+                  <td>
+                    <a href="#" class="btn-icon">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Emma Wilson</td>
+                  <td class="hide-mobile">29</td>
+                  <td class="hide-mobile">Female</td>
+                  <td class="hide-tablet">
+                    <div class="contact-info">
+                      <p>555-234-5678</p>
+                      <p class="email">emma@example.com</p>
+                    </div>
+                  </td>
+                  <td class="hide-tablet">Sep 22, 2023</td>
+                  <td><span class="badge">5</span></td>
+                  <td>
+                    <a href="#" class="btn-icon">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Michael Brown</td>
+                  <td class="hide-mobile">62</td>
+                  <td class="hide-mobile">Male</td>
+                  <td class="hide-tablet">
+                    <div class="contact-info">
+                      <p>555-345-6789</p>
+                      <p class="email">michael@example.com</p>
+                    </div>
+                  </td>
+                  <td class="hide-tablet">Oct 10, 2023</td>
+                  <td><span class="badge">12</span></td>
+                  <td>
+                    <a href="#" class="btn-icon">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sarah Davis</td>
+                  <td class="hide-mobile">34</td>
+                  <td class="hide-mobile">Female</td>
+                  <td class="hide-tablet">
+                    <div class="contact-info">
+                      <p>555-456-7890</p>
+                      <p class="email">sarah@example.com</p>
+                    </div>
+                  </td>
+                  <td class="hide-tablet">Oct 18, 2023</td>
+                  <td><span class="badge">3</span></td>
+                  <td>
+                    <a href="#" class="btn-icon">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>James Wilson</td>
+                  <td class="hide-mobile">51</td>
+                  <td class="hide-mobile">Male</td>
+                  <td class="hide-tablet">
+                    <div class="contact-info">
+                      <p>555-567-8901</p>
+                      <p class="email">james@example.com</p>
+                    </div>
+                  </td>
+                  <td class="hide-tablet">Oct 5, 2023</td>
+                  <td><span class="badge">7</span></td>
+                  <td>
+                    <a href="#" class="btn-icon">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="data-card-footer">
+          <p>Showing 5 of 5 patients</p>
+          <div class="pagination">
+            <button class="btn-pagination" disabled>Previous</button>
+            <button class="btn-pagination" disabled>Next</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
